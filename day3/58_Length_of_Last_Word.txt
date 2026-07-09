@@ -1,0 +1,20 @@
+class Solution { public int lengthOfLastWord(String s) { char[] ar =
+s.toCharArray(); int c = 0;
+
+        for (int i = ar.length - 1; i >= 0; i--) {
+            if (ar[i] == ' ') {
+                continue;
+            } else {
+                c++;
+                if (i == 0) {
+                    return c;
+                } else if (ar[i - 1] == ' ') {
+                    return c;
+                }
+            }
+        }
+
+        return 0;
+    }
+
+}
