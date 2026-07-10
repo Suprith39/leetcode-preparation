@@ -1,0 +1,74 @@
+28. Find the Index of the First Occurrence in a String
+------------------------------------
+class Solution {
+    public int strStr(String haystack, String needle) {
+        int m = haystack.length();
+        int n = needle.length();
+
+        if (n == 0) return 0;
+
+        for (int i = 0; i <= m - n; i++) {
+            int j = 0;
+
+            while (j < n && haystack.charAt(i + j) == needle.charAt(j)) {
+                j++;
+            }
+
+            if (j == n) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+}
+
+268. Missing Number
+--------------------
+class Solution {
+    public int missingNumber(int[] nums) {
+        int n=nums.length;
+        int i=0;
+        Arrays.sort(nums);
+        if(nums[0]!=0){
+            return 0;
+        }
+        if(n==1){
+            
+            return 1;
+        }
+        
+       
+        while(i<n-1){
+           
+            
+            if(nums[i+1]-nums[i]!=1){
+                return nums[i]+1;
+            }
+           
+            i++;
+        }
+        
+        return nums[n-1]+1;
+    }
+}
+
+35. Search Insert Position
+-----------------------------
+class Solution {
+    public int searchInsert(int[] nums, int target) {
+        int n =nums.length;
+        for(int i=0;i<n;i++){
+            if(nums[i]==target){
+                return i;
+            }
+            else if(nums[i]>target){
+                return i;
+            }
+        }
+        
+            return n;
+        }
+      
+    
+}
